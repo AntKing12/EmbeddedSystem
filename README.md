@@ -9,6 +9,7 @@ It was decided to be a second order system with a breakfreqency of 7500hz
 The b and a coefficents were then taken from the matlab model and used to make a filter in code using difference equations
 
 For ease of use the existing code "Analog pass through Systik" was used to allow for use of the systick interupt and the DAC/ADC fuctions rather then reqriting them
+![Screenshot 2025-03-22 153510](https://github.com/user-attachments/assets/2820b059-3966-4d76-a4c2-d208965e6768)
 
 
 

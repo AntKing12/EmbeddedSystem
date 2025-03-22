@@ -4,7 +4,7 @@
 
 [Filter Function](https://github.com/AntKing12/EmbeddedSysyem#filter-function)
 
-[Port Issue](https://github.com/AntKing12/EmbeddedSysyem/edit/main/README.md#port-issue)
+[Port Issue](https://github.com/AntKing12/EmbeddedSysyem?tab=readme-ov-file#port-issue)
 
 [Results](https://github.com/AntKing12/EmbeddedSysyem/edit/main/README.md#results)
 

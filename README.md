@@ -2,7 +2,7 @@
 ## Table of contents
 [matlab](https://github.com/AntKing12/EmbeddedSysyem#matlab)
 
-[Filter Function](https://github.com/AntKing12/EmbeddedSysyem/edit/main/README.md#filter-function-1)
+[Filter Function](https://github.com/AntKing12/EmbeddedSysyem#filter-function)
 
 [Port Issue](https://github.com/AntKing12/EmbeddedSysyem/edit/main/README.md#port-issue)
 

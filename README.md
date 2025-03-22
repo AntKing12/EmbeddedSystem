@@ -1,6 +1,6 @@
 # Getting started with embedded systems project
 ## Table of contents
-[matlab](https://github.com/AntKing12/EmbeddedSysyem/edit/main/README.md#matlab-1)
+[matlab](https://github.com/AntKing12/EmbeddedSysyem#matlab)
 
 [Filter Function](https://github.com/AntKing12/EmbeddedSysyem/edit/main/README.md#filter-function-1)
 

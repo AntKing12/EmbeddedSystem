@@ -1,6 +1,6 @@
-# EmbeddedSysyem
-Embedded Systems code used through the course
+# Getting started with embedded systems project
 
+# Matlab
 Created a matlab  file that allowed for a filter and signal to be created
 The signal would be run at different frequencies to test how the filter would react to different signals
 
@@ -10,7 +10,8 @@ The b and a coefficents were then taken from the matlab model and used to make a
 
 For ease of use the existing code "Analog pass through Systik" was used to allow for use of the systick interupt and the DAC/ADC fuctions rather then rewriting them
 
-Filter Function
+# Filter Function
+
 ![image](https://github.com/user-attachments/assets/34952c4e-3701-4905-b192-ded071ac9886)
 
 ![Screenshot 2025-03-22 153510](https://github.com/user-attachments/assets/2820b059-3966-4d76-a4c2-d208965e6768)

@@ -1,6 +1,6 @@
-# Getting started with embedded systems project
+### Getting started with embedded systems project
 
-# Matlab
+## Matlab
 Created a matlab  file that allowed for a filter and signal to be created
 The signal would be run at different frequencies to test how the filter would react to different signals
 
@@ -34,4 +34,6 @@ A signal was then observed passing through the microprocessor
 This change was passed onto the filtering code and the signal was now filtering correctly confirming that pa_0 was not reading a signal.
 
 # Results
-Testing was done using oscilliscopes and comparing the output of the filter to the matla
+Testing was done using oscilliscopes and comparing the output of the filter to the matlab model to view if the real world results matched expected values.
+
+

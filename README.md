@@ -6,7 +6,7 @@
 
 [Port Issue](https://github.com/AntKing12/EmbeddedSysyem?tab=readme-ov-file#port-issue)
 
-[Results](https://github.com/AntKing12/EmbeddedSysyem/edit/main/README.md#results)
+[Results](https://github.com/AntKing12/EmbeddedSysyem#results)
 
 ## Matlab
 Created a matlab  file that allowed for a filter and signal to be created

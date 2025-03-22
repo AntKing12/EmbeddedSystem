@@ -1,5 +1,5 @@
 # EmbeddedSysyem
-Embedded Systems code used through the coarse
+Embedded Systems code used through the course
 
 Created a matlab  file that allowed for a filter and signal to be created
 The signal would be run at different frequencies to test how the filter would react to different signals

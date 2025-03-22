@@ -1,4 +1,12 @@
 # Getting started with embedded systems project
+## Table of contents
+[matlab](https://github.com/AntKing12/EmbeddedSysyem/edit/main/README.md#matlab-1)
+
+[Filter Function](https://github.com/AntKing12/EmbeddedSysyem/edit/main/README.md#filter-function-1)
+
+[Port Issue](https://github.com/AntKing12/EmbeddedSysyem/edit/main/README.md#port-issue)
+
+[Results](https://github.com/AntKing12/EmbeddedSysyem/edit/main/README.md#results)
 
 ## Matlab
 Created a matlab  file that allowed for a filter and signal to be created

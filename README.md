@@ -10,3 +10,17 @@ The b and a coefficents were then taken from the matlab model and used to make a
 
 For ease of use the existing code "Analog pass through Systik" was used to allow for use of the systick interupt and the DAC/ADC fuctions rather then reqriting them
 
+
+
+
+While working on the code an issue became apprent as no output was being read on the pa_0 the output port
+Testing ahd to be done to see where the error was occuring
+A constant was applied to the dac to see if an output was read
+Changing the constant changed the value read on the oscilloscope showing that the DAC was working an outputting
+The oscilloscope read that a signal was applied to the input showing the function generator worked as expected
+The orignal analog pass through systik code was uploaded onto the L432kc to ensure that the changes to the code weren't affecting the pass through
+The orignal code still did not work.
+By changing the code to use pa_1 which has a ADC on channel 6 rather then chanel 5 to determine if pa_0 was broken.
+A signal was then observed passing through the microprocessor
+This change was passed onto the filtering code and the signal was now filtering correctly confirming that pa_0 was not reading a signal.
+

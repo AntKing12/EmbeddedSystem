@@ -36,7 +36,7 @@ This change was passed onto the filtering code and the signal was now filtering 
 ## Results
 Testing was done using oscilliscopes and comparing the output of the filter to the matlab model to view if the real world results matched expected values.
 
-###Sine wave input
+### Sine wave input
 ![200hz sin](https://github.com/user-attachments/assets/60c0eb01-de19-4b4e-9fb0-f4d28f2f5890)
 
 ![3000hz sin](https://github.com/user-attachments/assets/5d56a05d-b9f7-4bab-9f72-a4ddf948c17c)

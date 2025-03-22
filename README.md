@@ -35,15 +35,18 @@ This change was passed onto the filtering code and the signal was now filtering 
 
 ## Results
 Testing was done using oscilliscopes and comparing the output of the filter to the matlab model to view if the real world results matched expected values.
-
+    
 ### Sine wave input
-![200hz sin](https://github.com/user-attachments/assets/60c0eb01-de19-4b4e-9fb0-f4d28f2f5890)
+![200hz sin](https://github.com/user-attachments/assets/60c0eb01-de19-4b4e-9fb0-f4d28f2f5890) ![matlab 200hz sin](https://github.com/user-attachments/assets/b760b9ac-640e-4411-952f-20b69b66a8cd)
 
-![3000hz sin](https://github.com/user-attachments/assets/5d56a05d-b9f7-4bab-9f72-a4ddf948c17c)
 
-![7500 hz sin](https://github.com/user-attachments/assets/fb7171ec-423d-45fd-b645-c9b81e24b1c3)
+![3000hz sin](https://github.com/user-attachments/assets/5d56a05d-b9f7-4bab-9f72-a4ddf948c17c) ![matlab 3000hz sin](https://github.com/user-attachments/assets/4467433a-c3e3-4490-8680-bdd46c48d49b)
 
-![30000hz sin](https://github.com/user-attachments/assets/f17fca23-fcae-4737-8794-57b476f61f34)
+
+![7500hz sin](https://github.com/user-attachments/assets/fb7171ec-423d-45fd-b645-c9b81e24b1c3) ![matlab 7500hz sin](https://github.com/user-attachments/assets/fb63e6f8-f5e0-425c-af71-da7c83489a56)
+
+
+![30000hz sin](https://github.com/user-attachments/assets/f17fca23-fcae-4737-8794-57b476f61f34) ![matlab 30000hz sin](https://github.com/user-attachments/assets/a4128e41-e7a8-4ac5-a40c-e4cb69b0d540)
 
 
 

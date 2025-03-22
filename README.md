@@ -1,4 +1,4 @@
-### Getting started with embedded systems project
+# Getting started with embedded systems project
 
 ## Matlab
 Created a matlab  file that allowed for a filter and signal to be created
@@ -10,7 +10,7 @@ The b and a coefficents were then taken from the matlab model and used to make a
 
 For ease of use the existing code "Analog pass through Systik" was used to allow for use of the systick interupt and the DAC/ADC fuctions rather then rewriting them
 
-# Filter Function
+## Filter Function
 
 ![image](https://github.com/user-attachments/assets/34952c4e-3701-4905-b192-ded071ac9886)
 
@@ -21,7 +21,7 @@ The b and a coeffcients are stored in arrays which remain unchanged
 x and y are rotated as new information in brought in to allow for use in the equation
 
 
-# Port issue
+## Port issue
 While working on the code an issue became apprent as no output was being read on the pa_0 the output port
 Testing ahd to be done to see where the error was occuring
 A constant was applied to the dac to see if an output was read
@@ -33,7 +33,18 @@ By changing the code to use pa_1 which has a ADC on channel 6 rather then chanel
 A signal was then observed passing through the microprocessor
 This change was passed onto the filtering code and the signal was now filtering correctly confirming that pa_0 was not reading a signal.
 
-# Results
+## Results
 Testing was done using oscilliscopes and comparing the output of the filter to the matlab model to view if the real world results matched expected values.
 
+###Sine wave input
+![200hz sin](https://github.com/user-attachments/assets/60c0eb01-de19-4b4e-9fb0-f4d28f2f5890)
 
+![3000hz sin](https://github.com/user-attachments/assets/5d56a05d-b9f7-4bab-9f72-a4ddf948c17c)
+
+![7500 hz sin](https://github.com/user-attachments/assets/fb7171ec-423d-45fd-b645-c9b81e24b1c3)
+
+![30000hz sin](https://github.com/user-attachments/assets/f17fca23-fcae-4737-8794-57b476f61f34)
+
+
+
+###Square wave input

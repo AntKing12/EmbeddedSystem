@@ -7,12 +7,16 @@
 [Port Issue](https://github.com/AntKing12/EmbeddedSysyem?tab=readme-ov-file#port-issue)
 
 [Results](https://github.com/AntKing12/EmbeddedSysyem#results)
+## Introduction
+The scope of this project was to create a low pass filter
+A L432KC microprocesser would be used to read in a signal, filter it using a difference equation and output the filtered signal;
+
 
 ## Matlab
 Created a matlab  file that allowed for a filter and signal to be created
 The signal would be run at different frequencies to test how the filter would react to different signals
 
-The filter was made using the butter function in matlab.
+The filter was made using the butter function in matlab
 It was decided to be a second order system with a breakfreqency of 7500hz
 The b and a coefficents were then taken from the matlab model and used to make a filter in code using difference equations
 

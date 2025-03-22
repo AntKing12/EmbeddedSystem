@@ -16,10 +16,12 @@ For ease of use the existing code "Analog pass through Systik" was used to allow
 
 ![Screenshot 2025-03-22 153510](https://github.com/user-attachments/assets/2820b059-3966-4d76-a4c2-d208965e6768)
 
+Using the difference equation the output can easily be calculated
+The b and a coeffcients are stored in arrays which remain unchanged 
+x and y are rotated as new information in brought in to allow for use in the equation
 
 
-
-
+# Port issue
 While working on the code an issue became apprent as no output was being read on the pa_0 the output port
 Testing ahd to be done to see where the error was occuring
 A constant was applied to the dac to see if an output was read
@@ -31,3 +33,5 @@ By changing the code to use pa_1 which has a ADC on channel 6 rather then chanel
 A signal was then observed passing through the microprocessor
 This change was passed onto the filtering code and the signal was now filtering correctly confirming that pa_0 was not reading a signal.
 
+# Results
+Testing was done using oscilliscopes and comparing the output of the filter to the matla

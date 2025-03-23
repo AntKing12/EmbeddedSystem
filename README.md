@@ -10,7 +10,7 @@
 
 [Port Issue](https://github.com/AntKing12/EmbeddedSystem?tab=readme-ov-file#port-issue)
 
-[Systick Interupt](https://github.com/AntKing12/EmbeddedSystem#systick-interupt)
+[Systick Interrupt](https://github.com/AntKing12/EmbeddedSystem#systick-interupt)
 
 [Buffer](https://github.com/AntKing12/EmbeddedSystem#buffer)
 

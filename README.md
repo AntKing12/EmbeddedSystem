@@ -1,18 +1,18 @@
 # Getting started with embedded systems project
 ## Table of contents
-[Introduction](https://github.com/AntKing12/EmbeddedSystem/edit/main/README.md#introduction)
+[Introduction](https://github.com/AntKing12/EmbeddedSystem#introduction)
 
 [matlab](https://github.com/AntKing12/EmbeddedSysyem#matlab)
 
 [Filter Function](https://github.com/AntKing12/EmbeddedSysyem#filter-function)
 
-[Circuit Diagram]()
+[Circuit Diagram](https://github.com/AntKing12/EmbeddedSystem#circuit-diagram)
 
 [Port Issue](https://github.com/AntKing12/EmbeddedSysyem?tab=readme-ov-file#port-issue)
 
-[Systick Interupt]()
+[Systick Interupt](https://github.com/AntKing12/EmbeddedSystem#systick-interupt)
 
-[Buffer]()
+[Buffer](https://github.com/AntKing12/EmbeddedSystem#buffer)
 
 [Results](https://github.com/AntKing12/EmbeddedSysyem#results)
 ## Introduction

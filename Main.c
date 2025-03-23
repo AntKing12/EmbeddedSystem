@@ -17,16 +17,24 @@ void initDAC();
 void writeDAC(int value);
 void initSerial(uint32_t baudrate);
 
+#include <stdio.h>
+#include <stdint.h>
+#define CIRC_BUF_SIZE 64
+
+typedef struct {
+	int data[CIRC_BUF_SIZE];
+	uint32_t head;
+	uint32_t tail;
+	uint32_t count;
+} circular_buffer;
+circular_buffer sample_buf;
 
 int filter(int input);
 
 float b[]={0.0119,	0.0237,	0.0119};// B and A coefficents of butter filter from matlab
 float a[]={1.0000,	-1.6692,	0.7166};
-
-float x[3]={0};
+float x[3]={0};//Empty arrays on inital upload used to store previous values for difference equation
 float y[3]={0};
-uint16_t input;
-uint16_t output;
 
 int main()
 {
@@ -37,7 +45,12 @@ int main()
 	__asm(" cpsie i "); // enable interrupts globally
     while(1)
     {
-       
+        int sample;
+        if (get_circ_buf(&sample_buf, &sample) == 0) {// process the buffer if buffer is not empty
+            int processed = filter(sample);
+            writeDAC(processed);
+        }
+        // 
     }
 }
 void delay(volatile uint32_t dly)
@@ -57,15 +70,12 @@ void setup()
     initSerial(9600);                       // Initialise serial comms
     
 }
-void SysTick_Handler(void)
-{
-    int vin;
-    GPIOB->ODR |= (1 << 3);
-    vin = readADC(5);
-    output=filter(vin); 
-    writeDAC(output);
-    GPIOB->ODR &= ~(1 << 3); // toggle PB3 for timing measurement
+
+void SysTick_Handler(void) {
+    int vin = readADC();
+    put_circ_buf(&sample_buf, vin); // Store sample even if processor is busy
 }
+
 void initADC()
 {
     // initialize the ADC
@@ -91,7 +101,6 @@ int readADC()
     ADC1->CR |= (1 << 2); // start next conversion    
     return rvalue; // return the result
 }
-
 void initDAC()
 {
 
@@ -115,6 +124,7 @@ int filter(int input){
     y[0]= x[0]*b[0] + x[1]*b[1] + x[2]*b[2] - (y[1]*a[1] + y[2]*a[2]) ;// gets new output
     return y[0];
 }
+
 void initSerial(uint32_t baudrate)
 {
     RCC->AHB2ENR |= (1 << 0); // make sure GPIOA is turned on
@@ -133,4 +143,43 @@ void initSerial(uint32_t baudrate)
 	USART2->BRR = BaudRateDivisor;
 	USART2->CR1 =  (1 << 3);  // enable the transmitter
 	USART2->CR1 |= (1 << 0);
+}
+
+void init_circ_buf(circular_buffer *buf)
+{
+	buf->head=0;
+	buf->tail=0;
+}
+int put_circ_buf(circular_buffer *buf,int c)
+{
+	uint32_t new_head;
+	if (buf->count < CIRC_BUF_SIZE)
+	{
+		new_head=(((buf->head)+1)%CIRC_BUF_SIZE);
+		buf->data[buf->head]=c;
+		buf->head=new_head;
+		buf->count++;
+		return 0;	
+	}
+	else
+	{
+		return -1;
+	}
+}
+int get_circ_buf(circular_buffer *buf,int *c)
+{
+	uint32_t new_tail;
+	if (buf->count > 0)
+	{
+		new_tail=(((buf->tail)+1)%CIRC_BUF_SIZE);
+		*c=buf->data[buf->tail];
+		buf->data[buf->tail] = '-'; //debug
+		buf->tail=new_tail;
+		buf->count--;
+		return 0;	
+	}
+	else
+	{
+		return -1;
+	}
 }

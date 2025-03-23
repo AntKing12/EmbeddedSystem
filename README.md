@@ -2,7 +2,7 @@
 ## Table of contents
 [Introduction](https://github.com/AntKing12/EmbeddedSystem#introduction)
 
-[matlab](https://github.com/AntKing12/EmbeddedSystem#matlab)
+[Matlab](https://github.com/AntKing12/EmbeddedSystem#matlab)
 
 [Filter Function](https://github.com/AntKing12/EmbeddedSystem#filter-function)
 

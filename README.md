@@ -1,10 +1,18 @@
 # Getting started with embedded systems project
 ## Table of contents
+[Introduction](https://github.com/AntKing12/EmbeddedSystem/edit/main/README.md#introduction)
+
 [matlab](https://github.com/AntKing12/EmbeddedSysyem#matlab)
 
 [Filter Function](https://github.com/AntKing12/EmbeddedSysyem#filter-function)
 
+[Circuit Diagram]()
+
 [Port Issue](https://github.com/AntKing12/EmbeddedSysyem?tab=readme-ov-file#port-issue)
+
+[Systick Interupt]()
+
+[Buffer]()
 
 [Results](https://github.com/AntKing12/EmbeddedSysyem#results)
 ## Introduction
@@ -116,3 +124,8 @@ Testing was done using oscilliscopes and comparing the output of the filter to t
 
 #### 20000hz
 <img src="https://github.com/user-attachments/assets/83b37305-81a8-4520-98d2-aa6961712c2c" alt="200hz sin" width="400" height="300"> <img src="https://github.com/user-attachments/assets/67deacc3-7bdb-40ff-ba47-e4201a4e94e2" alt="200hz sin" width="400" height="300">
+
+### Discussion
+Its can be seen that there is a big simlarity between the model and the real output. some small varitiy exists. 
+This amy be due to real world errors in sampling a signal aswell as not getting exact signals with noice and frequency variations.
+

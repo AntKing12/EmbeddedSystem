@@ -92,9 +92,39 @@ By changing the code to use pa_1 which has a ADC on channel 6 rather then chanel
 A signal was then observed passing through the microprocessor.
 This change was passed onto the filtering code and the signal was now filtering correctly confirming that pa_0 was not reading a signal.
 
-## Systick Inturupt 
+## Systick Interrupt 
+The sysTick interrupt uses the system clock to determine when an interupt is called.
+By including this it allows for an accurate clock/timer.
+
+![image](https://github.com/user-attachments/assets/75bf76a0-2229-456a-a1a6-a7f3cb6474f1)
+
+![image](https://github.com/user-attachments/assets/4abbb48e-199e-4ccb-9833-6d39ac458c1e)
+
+In this example the systemcoreclock is being used to create an interupt 200000 times a second.
+This creates an interupt every 5 micro seconds which samples the incoming signal and stores it to be processed.
+
+Using an interupt is important here as it ensures that the sample rate is kept at a constant speed which is important to a filter
 
 ## Buffer
+A buffer is a way of storing information until it is ready to be processed. 
+This is important because if a processer is busy it may not process the new information being given which would affect the output.
+
+![init buffer](https://github.com/user-attachments/assets/b50de65c-7757-4f80-9345-b57d8ea175a3)
+
+![process buffer](https://github.com/user-attachments/assets/33cc8f1e-0775-4905-a601-a3fce7e04791)
+
+![build buffer](https://github.com/user-attachments/assets/a208a804-b50c-467b-b8ca-d3e6feb581f9)
+
+In the above example we see the uses of the buffer.
+It is initalised to have a tail, head and count which helps keep track of the contents.
+There are 64 slots availble in this buffer which aquites to 330 micro seconds worth of buffering
+
+When the code is running the buffer is being processed where the tail of the buffer is put through the filter and output.
+This is done continuously until the buffer is empty.
+
+When the systick inturupt is called a sample is taken and stored in the buffer.
+This insure that no matter what the microprocessor is currently doing the data will be read when needed 
+
 
 ## Results
 Testing was done using oscilliscopes and comparing the output of the filter to the matlab model to view if the real world results matched expected values.

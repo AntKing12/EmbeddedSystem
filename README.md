@@ -84,6 +84,10 @@ By changing the code to use pa_1 which has a ADC on channel 6 rather then chanel
 A signal was then observed passing through the microprocessor.
 This change was passed onto the filtering code and the signal was now filtering correctly confirming that pa_0 was not reading a signal.
 
+## Systick Inturupt 
+
+## Buffer
+
 ## Results
 Testing was done using oscilliscopes and comparing the output of the filter to the matlab model to view if the real world results matched expected values.
 ### Sine wave input

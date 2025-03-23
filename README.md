@@ -46,22 +46,31 @@ For ease of use the existing code "Analog pass through Systick" was used to allo
 
 The b and a values were put into a difference equation.
 These equations determine the output based on new and old information, with delays and feedback.
+
 y[0]*a[0] = x[0]*b[0]+x[1]*b[1]+...x[n]*b[n] - y[1]*a[1]-...y[n]*a[n].
-where y[0] is the output amd x[0] is the input.
+
+where y[0] is the output and x[0] is the input.
 x[1] and onwards represent previous values that are held to be used in future processing.
+y[1] and onwards represent previous outputs that are fed back into the equation.
 
 
 ![image](https://github.com/user-attachments/assets/34952c4e-3701-4905-b192-ded071ac9886)
 
 ![Screenshot 2025-03-22 153510](https://github.com/user-attachments/assets/2820b059-3966-4d76-a4c2-d208965e6768)
 
-Using the difference equation the output can easily be calculated.
-The b and a coeffcients are stored in arrays which remain unchanged.
-x and y are rotated as new information in brought in to allow for use in the equation.
+A for loop was s=used to shift the data from one position to the next whenever a new input was being read.
 
 ## Circuit Diagram
 
 ![image](https://github.com/user-attachments/assets/097424a9-c8eb-4d34-9c6a-510b326082a2)
+
+The circuit diagram is very basic due to this being a digital process with just a signal input and a signal output being required.
+The power is also connected with all grounds going back to the microprocessor
+
+![image](https://github.com/user-attachments/assets/99fc52a4-e186-4c1d-90fc-ae8e527c847b)
+
+Pa_1 and pa_4 were chosen due to their analog functions being ADC and DAC
+Pa_0 was orignally ment to be the ADC but broke during testing and had to be adjusted.
 
 ## Port issue
 While working on the code an issue became apprent as no output was being read on the pa_0 the output port.

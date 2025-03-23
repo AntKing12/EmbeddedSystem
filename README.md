@@ -18,9 +18,9 @@
 ## Introduction
 The scope of this project was to create a low pass filter using digital signal processing.
 
-A L432KC microprocesser would be used to read in a signal, filter it using a difference equation and output the filtered signal.
+An L432KC microprocesser would be used to read in a signal, filter it using a difference equation and output the filtered signal.
 
-Within this project an ADC, DAC, interups and buffers.
+Within this project an ADC, DAC, interups and buffer are used to create a digital low pass filter.
 
 Digital signal processing is the technique of using equations to alter signals rather then components such as capacitors.
 This allows for greater accuracy and repeatability as the system will always act the same no matter where its implemented while components change under different conditions such as heat.
@@ -38,19 +38,17 @@ It's normalised by picking a freuency you want to start attenuaing,fc and puttin
 fc/(fs/2)
 
 This will give a number somewhere between 1 and 0. 
-The fc in this project was 7500hz or 0.075.
+The fc in this project was 7500hz or 0.075 when normalised.
 
-Using th above values in matlab you input "[b,a] = butter(2, 0.075, "low"); ".
+Using the above values in matlab you input "[b,a] = butter(2, 0.075, "low"); ".
 b and a would contain the required values needed for the difference equation to filter the signal.
 
 A signal was created using the "cos" function in matlab.
 the frequency was adjusted to allow for testing the filter at different input frequencies.
 
-
-
 ## Filter Function
 
-For ease of use the existing code "Analog pass through Systick" was used to allow for use of the systick interupt and the DAC/ADC fuctions rather then rewriting them.
+For ease of use the existing code "Analog pass through Systick" was sampled to allow for use of the systick interupt and the DAC/ADC functions rather then rewriting them.
 
 The b and a values were put into a difference equation.
 These equations determine the output based on new and old information, with delays and feedback.
@@ -66,7 +64,7 @@ y[1] and onwards represent previous outputs that are fed back into the equation.
 
 ![Screenshot 2025-03-22 153510](https://github.com/user-attachments/assets/2820b059-3966-4d76-a4c2-d208965e6768)
 
-A for loop was s=used to shift the data from one position to the next whenever a new input was being read.
+A for loop was used to shift the data from one position to the next whenever a new input was being read.
 
 ## Circuit Diagram
 
@@ -81,19 +79,23 @@ Pa_1 and pa_4 were chosen due to their analog functions being ADC and DAC.
 Pa_0 was orignally ment to be the ADC but broke during testing and had to be adjusted.
 
 ## Port issue
-While working on the code an issue became apprent as no output was being read on the pa_0 the output port.
-Testing ahd to be done to see where the error was occuring.
+While working on the code an issue became apparent as no output was being read on the pa_0 the output port.
+Testing had to be done to see where the error was occuring.
+
 A constant was applied to the dac to see if an output was read.
 Changing the constant changed the value read on the oscilloscope showing that the DAC was working an outputting.
+
 The oscilloscope read that a signal was applied to the input showing the function generator worked as expected.
+
 The orignal analog pass through systik code was uploaded onto the L432kc to ensure that the changes to the code weren't affecting the pass through.
+
 The orignal code still did not work.
 By changing the code to use pa_1 which has a ADC on channel 6 rather then chanel 5 to determine if pa_0 was broken.
 A signal was then observed passing through the microprocessor.
 This change was passed onto the filtering code and the signal was now filtering correctly confirming that pa_0 was not reading a signal.
 
 ## Systick Interrupt 
-The sysTick interrupt uses the system clock to determine when an interupt is called.
+The systick interrupt uses the system clock to determine when an interupt is called.
 By including this it allows for an accurate clock/timer.
 
 ![image](https://github.com/user-attachments/assets/75bf76a0-2229-456a-a1a6-a7f3cb6474f1)
@@ -117,13 +119,13 @@ This is important because if a processer is busy it may not process the new info
 
 In the above example we see the uses of the buffer.
 It is initalised to have a tail, head and count which helps keep track of the contents.
-There are 64 slots availble in this buffer which aquites to 330 micro seconds worth of buffering
+There are 64 slots availble in this buffer which equates to 330 micro seconds worth of buffering
 
 When the code is running the buffer is being processed where the tail of the buffer is put through the filter and output.
 This is done continuously until the buffer is empty.
 
 When the systick inturupt is called a sample is taken and stored in the buffer.
-This insure that no matter what the microprocessor is currently doing the data will be read when needed 
+This insure that no matter what the microprocessor is currently doing the data will be read when needed.
 
 
 ## Results
@@ -157,5 +159,5 @@ Testing was done using oscilliscopes and comparing the output of the filter to t
 
 ### Discussion
 Its can be seen that there is a big simlarity between the model and the real output. some small varitiy exists. 
-This amy be due to real world errors in sampling a signal aswell as not getting exact signals with noice and frequency variations.
+This may be due to real world errors in sampling a signal aswell as not getting exact signals with noice and frequency variations.
 

@@ -65,11 +65,11 @@ A for loop was s=used to shift the data from one position to the next whenever a
 ![image](https://github.com/user-attachments/assets/097424a9-c8eb-4d34-9c6a-510b326082a2)
 
 The circuit diagram is very basic due to this being a digital process with just a signal input and a signal output being required.
-The power is also connected with all grounds going back to the microprocessor
+The power is also connected with all grounds going back to the microprocessor.
 
 ![image](https://github.com/user-attachments/assets/99fc52a4-e186-4c1d-90fc-ae8e527c847b)
 
-Pa_1 and pa_4 were chosen due to their analog functions being ADC and DAC
+Pa_1 and pa_4 were chosen due to their analog functions being ADC and DAC.
 Pa_0 was orignally ment to be the ADC but broke during testing and had to be adjusted.
 
 ## Port issue
